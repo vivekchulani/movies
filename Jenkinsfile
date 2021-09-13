@@ -20,9 +20,7 @@ pipeline {
                 echo "Building Docker Image...."
             }
             agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                }
+                dockerfile true
             }
         }
 
