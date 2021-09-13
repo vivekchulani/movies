@@ -22,6 +22,10 @@ pipeline {
             agent {
                 dockerfile true
             }
+            steps {
+                sh 'docker version'
+                sd 'pwd'
+            }
         }
 
         stage('Push Image to Artifactory') {
