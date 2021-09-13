@@ -24,7 +24,7 @@ pipeline {
 
         stage('Push Image to Artifactory') {
             steps {
-                echo "PushingImage to Artifactory..."
+                echo "Pushing Image to Artifactory..."
             }
         }
     }
