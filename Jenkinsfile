@@ -6,8 +6,6 @@ pipeline {
         jdk 'jdk'
     }
 
-    def movieImage
-
     stages {
         stage('Build project') {
             steps {
@@ -19,9 +17,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image...."
-            }
-            script {
-                movieImage =  docker.build("movies:${env.BUILD_ID}")
+                script {
+                    def movieImage =  docker.build("movies:${env.BUILD_ID}")
+                }
             }
         }
 
