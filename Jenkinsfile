@@ -3,9 +3,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Test stage') {
+        stage('Build project') {
             steps {
-                echo "Hello World!"
+                echo "Building project..."
+                sh "mvn clean install"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo "Building Docker Image..."
+            }
+        }
+
+        stage('Push Image to Artifactory') {
+            steps {
+                echo "PushingImage to Artifactory..."
             }
         }
     }
