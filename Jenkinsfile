@@ -17,8 +17,11 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image...."
-                script {
-                    def movieImage =  docker.build("movies:${env.BUILD_ID}")
+            }
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+
                 }
             }
         }
