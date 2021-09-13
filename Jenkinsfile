@@ -20,9 +20,6 @@ pipeline {
                 dockerfile true
             }
             steps {
-                echo 'Building Docker Image...'
-                sh 'docker version'
-                sd 'pwd'
             }
         }
 
