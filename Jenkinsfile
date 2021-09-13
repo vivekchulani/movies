@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image...."
-                dockerImage =  docker.build("movies:${env.BUILD_NUMBER}")
+                def dockerImage =  docker.build("movies:${env.BUILD_NUMBER}")
             }
         }
 
