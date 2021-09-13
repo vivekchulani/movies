@@ -16,14 +16,8 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    args '-v ~/.jenkins/workspace/Movies:/tmp'
-                }
-            }
             steps {
-                echo 'test'
+                sh 'pwd'
             }
         }
 
