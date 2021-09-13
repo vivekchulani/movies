@@ -16,13 +16,11 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            steps {
-                echo "Building Docker Image...."
-            }
             agent {
                 dockerfile true
             }
             steps {
+                echo 'Building Docker Image...'
                 sh 'docker version'
                 sd 'pwd'
             }
