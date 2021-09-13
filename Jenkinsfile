@@ -1,7 +1,12 @@
 #!groovy
+pipeline {
+    agent any
 
-{
-    stage('Test stage') {
-        echo "Hello World!"
+    stages {
+        stage('Test stage') {
+            steps {
+                echo "Hello World!"
+            }
+        }
     }
 }
