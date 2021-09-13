@@ -10,7 +10,6 @@ pipeline {
         stage('Build project') {
             steps {
                 echo "Building project..."
-                echo "M2_HOME = ${M2_HOME}"
                 sh "mvn clean install"
             }
         }
