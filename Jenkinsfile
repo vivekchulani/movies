@@ -17,6 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image..."
+                sh "docker build -t movies:${env.BUILD_NUMBER} ."
             }
         }
 
