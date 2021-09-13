@@ -19,8 +19,6 @@ pipeline {
             agent {
                 dockerfile true
             }
-            steps {
-            }
         }
 
         stage('Push Image to Artifactory') {
