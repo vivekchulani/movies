@@ -4,7 +4,6 @@ pipeline {
     tools {
         maven 'maven'
         jdk 'jdk'
-        docker 'docker'
     }
 
     stages {
@@ -18,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image...."
-                sh "docker build -t movies:${env.BUILD_NUMBER} ."
+                dockerImage =  docker.build("movies:${env.BUILD_NUMBER}")
             }
         }
 
