@@ -18,7 +18,6 @@ pipeline {
         stage('Build Docker Image') {
             agent {
                 dockerfile {
-                    additionalBuildArgs '--tag movies:$BRANCH_NAME'
                     args '-v $WORKSPACE:/project -w /project'
                 }
             }
