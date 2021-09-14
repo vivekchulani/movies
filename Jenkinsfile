@@ -16,17 +16,16 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            agent { dockerfile true }
+        stage('Build Docker Image & Push to Artifactory') {
+            agent {
+                dockerfile {
+                    additionalBuildArgs '--tag rppp:$BRANCH_NAME'
+                }
+            }
             steps {
                 sh 'pwd'
             }
         }
 
-        stage('Push Image to Artifactory') {
-            steps {
-                echo "Pushing Image to Artifactory..."
-            }
-        }
     }
 }
