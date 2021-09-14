@@ -12,6 +12,7 @@ pipeline {
                 echo "Building project..."
                 sh "pwd"
                 sh "mvn clean install"
+                echo "$WORKSPACE"
             }
         }
 
