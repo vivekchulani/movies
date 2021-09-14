@@ -10,19 +10,16 @@ pipeline {
         stage('Build project') {
             steps {
                 echo "Building project..."
+                sh "pwd"
                 sh "mvn clean install"
+                echo "$WORKSPACE"
             }
         }
 
         stage('Build Docker Image') {
+            agent { dockerfile true }
             steps {
-                echo "Building Docker Image...."
-            }
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-
-                }
+                sh 'pwd'
             }
         }
 
