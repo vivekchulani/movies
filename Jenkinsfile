@@ -19,7 +19,7 @@ pipeline {
         stage('Build Docker Image & Push to Artifactory') {
             agent {
                 dockerfile {
-                    additionalBuildArgs '-t rppp:$BRANCH_NAME'
+                    additionalBuildArgs '--tag rppp:v1'
                 }
             }
             steps {
