@@ -16,6 +16,14 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            agent { dockerfile true }
+            steps {
+                echo "$WORKSPACE"
+                sh 'docker --version'
+            }
+        }
+
         stage('Build Docker Image') {
             agent {
                 dockerfile {
