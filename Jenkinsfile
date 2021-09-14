@@ -16,20 +16,8 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            agent { dockerfile true }
-            steps {
-                echo "$WORKSPACE"
-                sh 'docker --version'
-            }
-        }
-
         stage('Build Docker Image') {
-            agent {
-                dockerfile {
-                    args '-v $WORKSPACE:/project -w /project'
-                }
-            }
+            agent { dockerfile true }
             steps {
                 sh 'pwd'
             }
